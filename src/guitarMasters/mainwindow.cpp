@@ -7,10 +7,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setWindowTitle("GuitarMaster");
+
     networkManager = new QNetworkAccessManager(this);
     networkReply = networkManager->get(QNetworkRequest(QUrl("https://qtdatabaseguitar-default-rtdb.europe-west1.firebasedatabase.app/mainTable.json")));
 
     connect(networkReply, &QNetworkReply::readyRead, this, &MainWindow::networkReplyReadyRead);
+
+
+    aboutAppForm = new AboutAppForm();
 }
 
 
@@ -55,3 +60,10 @@ void MainWindow::networkReplyReadyRead()
         qDebug() << "Data received:" << networkReply->readAll();
     }
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    aboutAppForm->close();
+    aboutAppForm->show();
+}
+

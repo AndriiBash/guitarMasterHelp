@@ -9,6 +9,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
+#include <aboutappform.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -30,10 +31,16 @@ private slots:
     void on_pushButton_clicked();
 
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
 
+    // getter's data from Firebase
     QNetworkAccessManager *networkManager;
     QNetworkReply *networkReply;
+
+    // form's
+    AboutAppForm *aboutAppForm;
 };
 #endif // MAINWINDOW_H

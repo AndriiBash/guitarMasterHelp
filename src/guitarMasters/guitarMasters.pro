@@ -9,13 +9,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    aboutappform.cpp \
+    macSpecific/view.mm \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    masterinfo.cpp
 
 HEADERS += \
-    mainwindow.h
+    aboutappform.h \
+    macSpecific/blurWidget.h \
+    mainwindow.h \
+    masterinfo.h
 
 FORMS += \
+    aboutappform.ui \
     mainwindow.ui
 
 # Default rules for deployment.
