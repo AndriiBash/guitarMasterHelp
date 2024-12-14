@@ -12,8 +12,8 @@ public:
     BlurWidget();
     ~BlurWidget() = default;
 
-    void moveEvent(QMoveEvent *event) override;
-    void resizeEvent(QResizeEvent *event) override;
+    void moveEvent(QMoveEvent *event) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
 private:
     void* effectsView = nullptr;
