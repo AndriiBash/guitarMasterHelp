@@ -1,6 +1,8 @@
 #include "aboutappform.h"
 #include "ui_aboutappform.h"
 
+#include <QDesktopServices>
+
 AboutAppForm::AboutAppForm(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AboutAppForm)
@@ -16,3 +18,26 @@ AboutAppForm::~AboutAppForm()
 {
     delete ui;
 }
+
+void AboutAppForm::on_pushButton_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://t.me/igorockkk_guitar"));
+}
+
+
+void AboutAppForm::on_pushButton_3_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://t.me/anbidexter"));
+}
+
+void AboutAppForm::on_pushButton_2_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://t.me/cyan_light"));
+}
+
+
+void AboutAppForm::on_pushButton_4_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/AndriiBash/guitarMasterHelp/tree/main"));
+}
+

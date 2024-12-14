@@ -67,3 +67,5 @@ void MainWindow::on_pushButton_2_clicked()
     aboutAppForm->show();
 }
 
+// ADD METHOD WHEN CLOSE MAIN WINDOW, ALL WINDOW'S TOO CLOSE
+
