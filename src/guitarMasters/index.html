@@ -1,215 +1,235 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Майстри Гітар</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            overflow-x: hidden;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        overflow-x: hidden;
+      }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
 
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.2s;
-            cursor: pointer;
-        }
+      .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.2s;
+        cursor: pointer;
+      }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+      .card:hover {
+        transform: translateY(-5px);
+      }
 
-        .card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
+      .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
 
-        .card-body {
-            padding: 15px;
-        }
+      .card-body {
+        padding: 15px;
+      }
 
-        .card-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+      .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
 
-        .card-description {
-            font-size: 14px;
-            color: #555;
-        }
+      .card-description {
+        font-size: 14px;
+        color: #555;
+      }
 
-        .card-footer {
-            font-size: 12px;
-            color: #777;
-            margin-top: 10px;
-        }
+      .card-footer {
+        font-size: 12px;
+        color: #777;
+        margin-top: 10px;
+      }
 
-        .developers {
-            text-align: center;
-            margin: 20px 0;
-        }
+      .developers {
+        text-align: center;
+        margin: 20px 0;
+      }
 
-        .developers a {
-            display: inline-flex;
-            align-items: center;
-            margin: 10px;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
+      .developers a {
+        display: inline-flex;
+        align-items: center;
+        margin: 10px;
+        padding: 12px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        color: #fff;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        overflow: hidden;
+        position: relative;
+      }
 
-        .developers a img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
+      .developers a:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+      }
 
-        .developers a:nth-child(1) {
-            background-color: #007bff;
-            color: #fff;
-        }
+      .developers a img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        transition: none; /* Убираем эффект затемнения для всех иконок */
+      }
 
-        .developers a:nth-child(1):hover {
-            background-color: #0056b3;
-        }
+      /* Единый стиль для Telegram-кнопок */
+      .developers a[href*="t.me"] {
+        background: linear-gradient(135deg, #0088cc 0%, #005f99 100%);
+      }
 
-        .developers a:nth-child(2) {
-            background-color: #28a745;
-            color: #fff;
-        }
+      .developers a[href*="t.me"]:hover {
+        background: linear-gradient(135deg, #005f99 0%, #0088cc 100%);
+      }
 
-        .developers a:nth-child(2):hover {
-            background-color: #1e7e34;
-        }
+      /* GitHub-specific styling */
+      .developers a[href*="github.com"] {
+        background: linear-gradient(135deg, #4b4b4b 0%, #000 100%);
+      }
 
-        .developers a:nth-child(3) {
-            background-color: #ffc107;
-            color: #000;
-        }
+      .developers a[href*="github.com"]:hover {
+        background: linear-gradient(135deg, #000 0%, #4b4b4b 100%);
+      }
 
-        .developers a:nth-child(3):hover {
-            background-color: #e0a800;
-        }
+      .developers a[href*="github.com"] img {
+        filter: invert(1); /* Делает иконку белой */
+      }
 
-        .developers a:nth-child(4) {
-            background-color: #333;
-            color: #fff;
+      /* Animation styles */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-        .developers a:nth-child(4):hover {
-            background-color: #000;
-        }
+      .card {
+        animation: fadeIn 0.5s ease-in-out;
+      }
 
-        /* Animation styles */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .fade-page {
-            animation: fadeIn 0.5s ease-in-out;
-        }
+      .fade-page {
+        animation: fadeIn 0.5s ease-in-out;
+      }
     </style>
-</head>
-<body class="fade-page">
-    <h1 style="text-align: center; padding: 20px;">Майстри Гітар</h1>
+  </head>
+  <body class="fade-page">
+    <h1 style="text-align: center; padding: 20px">Майстри Гітар</h1>
     <div class="developers">
-        <a href="https://t.me/+XNvNqEbhWgo0ODg" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">Гітарний чат
-        </a>
-        <a href="https://t.me/anbidexter" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">Розробник 1
-        </a>
-        <a href="https://t.me/cyan_light" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">Розробник 2
-        </a>
-        <a href="https://github.com/AndriiBash/guitarMasterHelp/tree/main" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">GitHub
-        </a>
+      <a href="https://t.me/+XNvNqEbhWgo0ODg" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+          alt="Telegram"
+        />Гітарний чат
+      </a>
+      <a href="https://t.me/anbidexter" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+          alt="Telegram"
+        />Розробник 1
+      </a>
+      <a href="https://t.me/cyan_light" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+          alt="Telegram"
+        />Розробник 2
+      </a>
+      <a
+        href="https://github.com/AndriiBash/guitarMasterHelp/tree/main"
+        target="_blank"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+          alt="GitHub"
+        />GitHub
+      </a>
     </div>
     <div class="container" id="card-container">
-        <!-- Cards will be injected here -->
+      <!-- Cards will be injected here -->
     </div>
 
     <script>
-        const url = "https://qtdatabaseguitar-default-rtdb.europe-west1.firebasedatabase.app/mainTable.json";
+      const url =
+        "https://qtdatabaseguitar-default-rtdb.europe-west1.firebasedatabase.app/mainTable.json";
 
-        async function fetchData() {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                displayCards(data);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
+      async function fetchData() {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          displayCards(data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
         }
+      }
 
-        function displayCards(data) {
-            const container = document.getElementById("card-container");
-            container.innerHTML = ""; // Clear existing content
+      function displayCards(data) {
+        const container = document.getElementById("card-container");
+        container.innerHTML = ""; // Clear existing content
 
-            data.forEach((item, index) => {
-                if (!item || !item.FIO) return; // Skip null or invalid entries
+        data.forEach((item, index) => {
+          if (!item || !item.FIO) return; // Skip null or invalid entries
 
-                const card = document.createElement("div");
-                card.className = "card";
-                card.setAttribute("data-index", index);
+          const card = document.createElement("div");
+          card.className = "card";
+          card.setAttribute("data-index", index);
 
-                card.innerHTML = `
-                    <img src="https://via.placeholder.com/250x150" alt="${item.FIO}">
+          card.innerHTML = `
+                    <img src="https://via.placeholder.com/250x150" alt="${
+                      item.FIO
+                    }">
                     <div class="card-body">
                         <div class="card-title">${item.FIO}</div>
                         <div class="card-description">
-                            <strong>Регіон:</strong> ${item.Region || 'N/A'}<br>
-                            <strong>Послуги:</strong> ${item.Services || 'N/A'}
+                            <strong>Регіон:</strong> ${item.Region || "N/A"}<br>
+                            <strong>Послуги:</strong> ${item.Services || "N/A"}
                         </div>
                         <div class="card-footer">
-                            <strong>Контакт:</strong> ${item.ContactNumber || 'N/A'}<br>
-                            <strong>Рейтинг:</strong> ${item.Rating || 'N/A'}
+                            <strong>Контакт:</strong> ${
+                              item.ContactNumber || "N/A"
+                            }<br>
+                            <strong>Рейтинг:</strong> ${item.Rating || "N/A"}
                         </div>
                     </div>
                 `;
 
-                card.addEventListener("click", () => {
-                    const queryString = new URLSearchParams(item).toString();
-                    window.location.href = `details.html?${queryString}`;
-                });
+          card.addEventListener("click", () => {
+            const queryString = new URLSearchParams(item).toString();
+            window.location.href = `details.html?${queryString}`;
+          });
 
-                container.appendChild(card);
-            });
-        }
+          container.appendChild(card);
+        });
+      }
 
-        fetchData();
+      fetchData();
     </script>
-</body>
+  </body>
 </html>
