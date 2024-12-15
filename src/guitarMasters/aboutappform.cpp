@@ -19,9 +19,11 @@ AboutAppForm::~AboutAppForm()
     delete ui;
 }
 
+
+// maybe get links from Firebase...
 void AboutAppForm::on_pushButton_clicked()
 {
-    QDesktopServices::openUrl(QUrl("https://t.me/igorockkk_guitar"));
+    QDesktopServices::openUrl(QUrl("https://t.me/+XNvNqEbhWgo0ODgy"));
 }
 
 

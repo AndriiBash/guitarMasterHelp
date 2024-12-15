@@ -5,6 +5,7 @@
 #include <QWindow>
 #include <QResizeEvent>
 
+
 class BlurWidget : public QWidget
 {
 

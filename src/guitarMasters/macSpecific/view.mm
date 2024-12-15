@@ -3,6 +3,11 @@
 
 #import <AppKit/AppKit.h>
 
+Widget::Widget() : QWidget(nullptr) {}
+void Widget::moveEvent(QMoveEvent *event) { QWidget::moveEvent(event); }
+void Widget::resizeEvent(QResizeEvent *event) { QWidget::resizeEvent(event); }
+
+
 BlurWidget::BlurWidget() : QWidget()
 {
     winId();

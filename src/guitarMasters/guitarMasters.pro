@@ -2,7 +2,7 @@ QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++17
+CONFIG += c++17 objective-c++
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -10,16 +10,22 @@ CONFIG += c++17
 
 SOURCES += \
     aboutappform.cpp \
-    macSpecific/view.mm \
     main.cpp \
     mainwindow.cpp \
     masterinfo.cpp
 
 HEADERS += \
     aboutappform.h \
-    macSpecific/blurWidget.h \
     mainwindow.h \
     masterinfo.h
+
+mac
+{
+    HEADERS += \
+        macSpecific/blurWidget.h \
+    SOURCES += \
+        macSpecific/view.mm \
+}
 
 FORMS += \
     aboutappform.ui \

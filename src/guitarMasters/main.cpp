@@ -5,14 +5,6 @@
 #include <macSpecific/blurWidget.h>
 #include <mainwindow.h>
 
-#ifndef  Q_OS_MACOS
-
-Widget::Widget() : QWidget(nullptr) {}
-void Widget::moveEvent(QMoveEvent *event) { QWidget::moveEvent(event); }
-void Widget::resizeEvent(QResizeEvent *event) { QWidget::resizeEvent(event); }
-
-#endif
-
 
 int main(int argc, char *argv[])
 {
