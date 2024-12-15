@@ -1,9 +1,7 @@
-#include "mainwindow.h"
-
 #include <QApplication>
 
-#include <macSpecific/blurWidget.h>
-#include <mainwindow.h>
+#include "mainwindow.h"
+#include "macSpecific/blurWidget.h"
 
 
 int main(int argc, char *argv[])
