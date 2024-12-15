@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .details-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .details-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .details-section {
+            margin-bottom: 15px;
+        }
+
+        .details-section strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .details-back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 14px;
+        }
+
+        .details-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="details-container">
+        <div class="details-title" id="details-title">Master Details</div>
+        <div class="details-section">
+            <strong>Full Name:</strong>
+            <span id="details-fio">N/A</span>
+        </div>
+        <div class="details-section">
+            <strong>Region:</strong>
+            <span id="details-region">N/A</span>
+        </div>
+        <div class="details-section">
+            <strong>Services:</strong>
+            <span id="details-services">N/A</span>
+        </div>
+        <div class="details-section">
+            <strong>Contact Number:</strong>
+            <span id="details-contact">N/A</span>
+        </div>
+        <div class="details-section">
+            <strong>Rating:</strong>
+            <span id="details-rating">N/A</span>
+        </div>
+        <a href="index.html" class="details-back">Back to Masters</a>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        document.getElementById("details-title").textContent = params.get("FIO") || "Master Details";
+        document.getElementById("details-fio").textContent = params.get("FIO") || "N/A";
+        document.getElementById("details-region").textContent = params.get("Region") || "N/A";
+        document.getElementById("details-services").textContent = params.get("Services") || "N/A";
+        document.getElementById("details-contact").textContent = params.get("ContactNumber") || "N/A";
+        document.getElementById("details-rating").textContent = params.get("Rating") || "N/A";
+    </script>
+</body>
+</html>
