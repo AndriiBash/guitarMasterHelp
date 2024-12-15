@@ -11,14 +11,17 @@ CONFIG += c++17
 
 SOURCES += \
     aboutappform.cpp \
+    cardmasterviewmodel.cpp \
     main.cpp \
     mainwindow.cpp \
-    masterinfo.cpp
+    viewModel/cardmasterviewmodel.cpp
 
 HEADERS += \
     aboutappform.h \
     blurWidget.h \
-    mainwindow.h
+    cardmasterviewmodel.h \
+    mainwindow.h \
+    viewModel/cardmasterviewmodel.h
 
 mac {
     HEADERS += \
@@ -29,7 +32,9 @@ mac {
 
 FORMS += \
     aboutappform.ui \
-    mainwindow.ui
+    cardmasterviewmodel.ui \
+    mainwindow.ui \
+    viewModel/cardmasterviewmodel.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

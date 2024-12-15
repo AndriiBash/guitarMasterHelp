@@ -60,7 +60,7 @@ void MainWindow::networkReplyReadyRead()
         QByteArray responseData = networkReply->readAll();
         QString responseString = QString::fromUtf8(responseData);
 
-        ui->label->setText(responseString);
+        ui->plainTextEdit->setPlainText(responseString);
 
         qDebug() << "Data received:" << networkReply->readAll();
     }

@@ -154,6 +154,16 @@ QWidget#scrollAreaWidgetContents
          <height>502</height>
         </rect>
        </property>
+       <widget class="QPlainTextEdit" name="plainTextEdit">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>60</y>
+          <width>256</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
