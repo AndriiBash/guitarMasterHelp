@@ -83,6 +83,15 @@ void MainWindow::parseJson(const QString &jsonString)
 
         QWidget* containerWidget = new QWidget();
         QGridLayout* layout = new QGridLayout(containerWidget);
+        layout->setSpacing(0);
+        layout->setContentsMargins(0, 0, 0, 0);
+        int row = 0, col = 0;
+        const int itemsPerRow = 6;
+
+        const int maxWidth = 200;
+        const int maxHeight = 300;
+        const int minWidth = 150;
+        const int minHeight = 250;
 
         for (const QJsonValue &value : jsonArray)
         {
@@ -93,27 +102,38 @@ void MainWindow::parseJson(const QString &jsonString)
                 if (!jsonObj.isEmpty())
                 {
                     MasterInfo masterInfo;
-
                     masterInfo.setDataJson(jsonObj);
                     masters.append(masterInfo);
 
                     CardMasterViewModel* cardMaster = new CardMasterViewModel(masterInfo);
+                    cardMaster->setMaximumSize(maxWidth, maxHeight);
+                    cardMaster->setMinimumSize(minWidth, minHeight);
 
-                    layout->addWidget(cardMaster);
+                    layout->addWidget(cardMaster, row, col);
+
+                    ++col;
+                    if (col == itemsPerRow)
+                    {
+                        col = 0;
+                        ++row;
+                    }
                 }
             }
         }
 
         containerWidget->setLayout(layout);
 
-        // Устанавливаем контейнер как виджет в QScrollArea
         ui->scrollArea->setWidget(containerWidget);
+        ui->scrollArea->setWidgetResizable(true);
+        ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     }
     else
     {
         qDebug() << "Error: JSON not a array";
     }
 }
+
+
 
 // ADD METHOD WHEN CLOSE MAIN WINDOW, ALL WINDOW'S TOO CLOSE
 
