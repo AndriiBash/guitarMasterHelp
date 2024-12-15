@@ -11,7 +11,6 @@ CONFIG += c++17
 
 SOURCES += \
     aboutappform.cpp \
-    cardmasterviewmodel.cpp \
     main.cpp \
     mainwindow.cpp \
     viewModel/cardmasterviewmodel.cpp
@@ -19,7 +18,6 @@ SOURCES += \
 HEADERS += \
     aboutappform.h \
     blurWidget.h \
-    cardmasterviewmodel.h \
     mainwindow.h \
     viewModel/cardmasterviewmodel.h
 
@@ -32,7 +30,6 @@ mac {
 
 FORMS += \
     aboutappform.ui \
-    cardmasterviewmodel.ui \
     mainwindow.ui \
     viewModel/cardmasterviewmodel.ui
 
