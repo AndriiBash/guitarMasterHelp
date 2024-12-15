@@ -20,8 +20,7 @@ HEADERS += \
     blurWidget.h \
     mainwindow.h
 
-macos
-{
+mac {
     HEADERS += \
         macSpecific/blurWidget.h
     SOURCES += \
@@ -36,3 +35,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    recources.qrc

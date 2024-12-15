@@ -1,8 +1,10 @@
 #include <QApplication>
 
 #include "mainwindow.h"
-#include "macSpecific/blurWidget.h"
 
+#ifdef __APPLE__
+#include "macSpecific/blurWidget.h"
+#endif
 
 int main(int argc, char *argv[])
 {

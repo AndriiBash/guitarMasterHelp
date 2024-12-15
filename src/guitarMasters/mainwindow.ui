@@ -20,7 +20,25 @@
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>8</number>
+    </property>
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="rightMargin">
+     <number>8</number>
+    </property>
+    <property name="bottomMargin">
+     <number>8</number>
+    </property>
     <item>
      <widget class="QFrame" name="frame">
       <property name="frameShape">
@@ -89,6 +107,23 @@
      </widget>
     </item>
     <item>
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">QLabel 
+{
+    font-size: 14px; 
+    font-weight: bold; 
+}</string>
+      </property>
+      <property name="text">
+       <string>Профілі майстрів</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QScrollArea" name="scrollArea">
       <property name="autoFillBackground">
        <bool>false</bool>
@@ -115,8 +150,8 @@ QWidget#scrollAreaWidgetContents
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>776</width>
-         <height>492</height>
+         <width>784</width>
+         <height>502</height>
         </rect>
        </property>
       </widget>
@@ -130,7 +165,7 @@ QWidget#scrollAreaWidgetContents
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

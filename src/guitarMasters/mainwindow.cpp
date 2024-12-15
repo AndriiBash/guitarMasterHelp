@@ -14,8 +14,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(networkReply, &QNetworkReply::readyRead, this, &MainWindow::networkReplyReadyRead);
 
-
     aboutAppForm = new AboutAppForm();
+
+#ifdef Q_OS_WIN
+    ui->centralwidget->setStyleSheet("QWidget#centralwidget"
+                                     "{"
+                                     "}");
+#endif
 }
 
 
