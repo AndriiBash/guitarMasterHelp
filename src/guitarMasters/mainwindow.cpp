@@ -85,13 +85,15 @@ void MainWindow::parseJson(const QString &jsonString)
         QGridLayout* layout = new QGridLayout(containerWidget);
         layout->setSpacing(0);
         layout->setContentsMargins(0, 0, 0, 0);
-        int row = 0, col = 0;
-        const int itemsPerRow = 6;
 
-        const int maxWidth = 200;
-        const int maxHeight = 300;
-        const int minWidth = 150;
-        const int minHeight = 250;
+        int row = 0;
+        int col = 0;
+        const int itemsPerRow = 4;
+
+        const int maxWidth = 250;
+        const int maxHeight = 350;
+        const int minWidth = 250;
+        const int minHeight = 350;
 
         for (const QJsonValue &value : jsonArray)
         {
