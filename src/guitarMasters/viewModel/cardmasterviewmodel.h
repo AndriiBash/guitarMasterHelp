@@ -2,6 +2,7 @@
 #define CARDMASTERVIEWMODEL_H
 
 #include <QWidget>
+#include "MasterInfo.h"
 
 namespace Ui {
 class CardMasterViewModel;
@@ -15,8 +16,13 @@ public:
     explicit CardMasterViewModel(QWidget *parent = nullptr);
     ~CardMasterViewModel();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::CardMasterViewModel *ui;
+
+    MasterInfo masterInfo;
 };
 
 #endif // CARDMASTERVIEWMODEL_H

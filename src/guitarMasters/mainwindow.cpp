@@ -62,6 +62,8 @@ void MainWindow::networkReplyReadyRead()
 
         ui->plainTextEdit->setPlainText(responseString);
 
+        parseJson(responseString);
+
         qDebug() << "Data received:" << networkReply->readAll();
     }
 }
@@ -70,6 +72,48 @@ void MainWindow::on_pushButton_2_clicked()
 {
     aboutAppForm->close();
     aboutAppForm->show();
+}
+
+void MainWindow::parseJson(const QString &jsonString)
+{
+    QJsonDocument doc = QJsonDocument::fromJson(jsonString.toUtf8());
+
+    if (doc.isArray())
+    {
+        QJsonArray jsonArray = doc.array();
+
+        masters.clear();
+
+        for (const QJsonValue &value : jsonArray)
+        {
+            if (value.isObject())
+            {
+                QJsonObject jsonObj = value.toObject();
+
+                if (!jsonObj.isEmpty())
+                {
+                    MasterInfo masterInfo;
+
+                    masterInfo.setDataJson(jsonObj);
+                    masters.append(masterInfo);
+                }
+            }
+        }
+
+        // only debug
+        for (const MasterInfo &master : masters)
+        {
+            qDebug() << "ContactNumber:" << master.getContactNumber();
+            qDebug() << "FIO:" << master.getFIO();
+            qDebug() << "Rating:" << master.getRating();
+            qDebug() << "Region:" << master.getRegion();
+            qDebug() << "Services:" << master.getServices();
+        }
+    }
+    else
+    {
+        qDebug() << "Error: JSON not a array";
+    }
 }
 
 // ADD METHOD WHEN CLOSE MAIN WINDOW, ALL WINDOW'S TOO CLOSE

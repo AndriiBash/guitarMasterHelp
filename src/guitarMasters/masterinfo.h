@@ -2,21 +2,27 @@
 #define MASTERINFO_H
 
 #include <QString>
-#include <QList>
-#include <QMap>
+#include <QJsonObject>
 
 class MasterInfo
 {
 public:
     MasterInfo();
+    MasterInfo(const QString &contactNumber, const QString &FIO, int rating, const QString &region, const QString &services);
+    void setDataJson(const QJsonObject &json);
+
+    QString getContactNumber() const;
+    QString getFIO() const;
+    int getRating() const;
+    QString getRegion() const;
+    QString getServices() const;
 
 private:
-    QString fullName;
-    QString description;
-    QMap<QString, QString> socialLinks;
-    double rating;
-    QList<QString> comments;
-
+    QString contactNumber;
+    QString FIO;
+    int rating;
+    QString region;
+    QString services;
 };
 
 #endif // MASTERINFO_H

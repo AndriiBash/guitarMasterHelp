@@ -8,8 +8,10 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QJsonArray>
 
 #include <aboutappform.h>
+#include "MasterInfo.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -30,8 +32,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-
     void on_pushButton_2_clicked();
+
+    void parseJson(const QString &jsonString);
+
 
 private:
     Ui::MainWindow *ui;
@@ -42,5 +46,8 @@ private:
 
     // form's
     AboutAppForm *aboutAppForm;
+
+    QList<MasterInfo> masters;
 };
+
 #endif // MAINWINDOW_H
