@@ -2,9 +2,10 @@
 #include "ui_cardmasterviewmodel.h"
 
 
-CardMasterViewModel::CardMasterViewModel(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::CardMasterViewModel)
+CardMasterViewModel::CardMasterViewModel(const MasterInfo &masterInfo, QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::CardMasterViewModel),
+    masterInfo(masterInfo)
 {
     ui->setupUi(this);
 

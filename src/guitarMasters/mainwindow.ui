@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QFrame
+   <string notr="true">QFrame#MainWindow
 {
 	border: 0px;
 }</string>
@@ -129,18 +129,10 @@
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">QScrollArea 
-{ 	
-	background: transparent; 
-	border: none;
-}
-
-QWidget#scrollAreaWidgetContents
+       <string notr="true">QScrollArea#scrollArea
 {
-	background: transparent; 
-	border: none;
-}
-</string>
+	border: 0px;
+}</string>
       </property>
       <property name="widgetResizable">
        <bool>true</bool>
@@ -151,19 +143,9 @@ QWidget#scrollAreaWidgetContents
          <x>0</x>
          <y>0</y>
          <width>784</width>
-         <height>502</height>
+         <height>500</height>
         </rect>
        </property>
-       <widget class="QPlainTextEdit" name="plainTextEdit">
-        <property name="geometry">
-         <rect>
-          <x>90</x>
-          <y>60</y>
-          <width>256</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
       </widget>
      </widget>
     </item>

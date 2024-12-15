@@ -13,7 +13,7 @@ class CardMasterViewModel : public QWidget
     Q_OBJECT
 
 public:
-    explicit CardMasterViewModel(QWidget *parent = nullptr);
+    explicit CardMasterViewModel(const MasterInfo &masterInfo, QWidget *parent = nullptr);
     ~CardMasterViewModel();
 
 private slots:
@@ -21,7 +21,6 @@ private slots:
 
 private:
     Ui::CardMasterViewModel *ui;
-
     MasterInfo masterInfo;
 };
 

@@ -60,8 +60,6 @@ void MainWindow::networkReplyReadyRead()
         QByteArray responseData = networkReply->readAll();
         QString responseString = QString::fromUtf8(responseData);
 
-        ui->plainTextEdit->setPlainText(responseString);
-
         parseJson(responseString);
 
         qDebug() << "Data received:" << networkReply->readAll();
@@ -81,8 +79,10 @@ void MainWindow::parseJson(const QString &jsonString)
     if (doc.isArray())
     {
         QJsonArray jsonArray = doc.array();
-
         masters.clear();
+
+        QWidget* containerWidget = new QWidget();
+        QGridLayout* layout = new QGridLayout(containerWidget);
 
         for (const QJsonValue &value : jsonArray)
         {
@@ -96,19 +96,18 @@ void MainWindow::parseJson(const QString &jsonString)
 
                     masterInfo.setDataJson(jsonObj);
                     masters.append(masterInfo);
+
+                    CardMasterViewModel* cardMaster = new CardMasterViewModel(masterInfo);
+
+                    layout->addWidget(cardMaster);
                 }
             }
         }
 
-        // only debug
-        for (const MasterInfo &master : masters)
-        {
-            qDebug() << "ContactNumber:" << master.getContactNumber();
-            qDebug() << "FIO:" << master.getFIO();
-            qDebug() << "Rating:" << master.getRating();
-            qDebug() << "Region:" << master.getRegion();
-            qDebug() << "Services:" << master.getServices();
-        }
+        containerWidget->setLayout(layout);
+
+        // Устанавливаем контейнер как виджет в QScrollArea
+        ui->scrollArea->setWidget(containerWidget);
     }
     else
     {

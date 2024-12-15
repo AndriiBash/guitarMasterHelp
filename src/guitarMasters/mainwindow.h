@@ -12,6 +12,7 @@
 
 #include <aboutappform.h>
 #include "MasterInfo.h"
+#include "viewModel/CardMasterViewModel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
