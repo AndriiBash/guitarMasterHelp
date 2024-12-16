@@ -2,17 +2,18 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background-color: #000000;
 }
 
 .details-container {
   max-width: 600px;
   margin: 50px auto;
-  background-color: #fff;
+  background-color: #161617;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   animation: fadeIn 0.5s ease-in-out;
+  color: #ffffff; /* Белый цвет текста */
 }
 
 .details-title {
@@ -58,7 +59,7 @@ body {
   font-size: 16px;
   font-weight: bold;
   color: #fff;
-  background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+  background: #0088cc;
   text-decoration: none;
   border-radius: 10px;
   text-align: center;
@@ -67,7 +68,7 @@ body {
 }
 
 .home-button:hover {
-  background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+  background: #006699;
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
