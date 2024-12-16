@@ -49,4 +49,16 @@ function displayCards(data) {
   });
 }
 
+function handleScroll() {
+  const header = document.querySelector(".sticky-header");
+  if (window.scrollY > 16) {    // maybe need fixed
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+}
+
+document.addEventListener("scroll", handleScroll);
+
+
 fetchData();
