@@ -167,3 +167,10 @@ h1 {
 .sticky-header.scrolled {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+@media (max-width: 767px) {
+  .sticky-header {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
