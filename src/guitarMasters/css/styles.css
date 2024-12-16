@@ -170,7 +170,7 @@ h1 {
 
 @media (max-width: 767px) {
   .sticky-header {
-    padding: 5px;
-    font-size: 12px;
+    padding: 12px;
+    font-size: 16px;
   }
 }
