@@ -28,7 +28,7 @@ function displayCards(data) {
     card.setAttribute("data-index", index);
 
     card.innerHTML = `
-        <img src="https://via.placeholder.com/250x150" alt="${item.nickName}">
+        <img src="${item.mainPhotoLink || "https://via.placeholder.com/250x150"}" alt="${item.nickName}">
         <div class="card-body">
             <div class="card-title">${item.nickName || "NoName"}</div>
             <div class="card-description">
@@ -37,7 +37,7 @@ function displayCards(data) {
                 <strong>Рейтинг:</strong> ${item.Rating || "N/A"}
             </div>
         </div>
-      `;
+    `;
 
     card.addEventListener("click", () => {
       const queryString = new URLSearchParams(item).toString();
@@ -58,6 +58,5 @@ function handleScroll() {
 }
 
 document.addEventListener("scroll", handleScroll);
-
 
 fetchData();

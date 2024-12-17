@@ -22,43 +22,55 @@ h1 {
 
 /* Card styles */
 .card {
+  position: relative;
   background-color: #1d1d1f;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s;
   cursor: pointer;
+  animation: fadeIn 0.35s ease-in-out;
+  min-height: 265px; 
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
 .card img {
   width: 100%;
-  height: 150px;
+  height: 100%;
+  position: absolute;
   object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .card-body {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.735);
+  border-radius
+  backdrop-filter: blur(10px);
+  color: #ffffff;
   padding: 15px;
+  z-index: 1;
+  box-sizing: border-box;
+  text-align: left;
+  border-top: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 .card-title {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 0 0 5px 0;
 }
 
 .card-description {
   font-size: 14px;
   color: #86868b;
-}
-
-.card-footer {
-  font-size: 12px;
-  color: #777;
-  margin-top: 10px;
 }
 
 
@@ -136,12 +148,9 @@ h1 {
   }
 }
 
-.card {
-  animation: fadeIn 0.5s ease-in-out;
-}
 
 .fade-page {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.25s ease-in-out;
 }
 
 .social-text {
