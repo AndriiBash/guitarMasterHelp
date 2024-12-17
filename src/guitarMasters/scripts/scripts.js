@@ -32,9 +32,9 @@ function displayCards(data) {
         <div class="card-body">
             <div class="card-title">${item.nickName || "NoName"}</div>
             <div class="card-description">
-                <strong>ПІБ:</strong> ${item.FIO || "N/A"}<br>
-                <strong>Регіон:</strong> ${item.Region || "N/A"}<br>
-                <strong>Рейтинг:</strong> ${item.Rating || "N/A"}
+                <strong>${item.FIO || "N/A"}</strong> <br>
+                <strong>${item.Region || "N/A"}</strong> <br>
+                <strong>Рейтинг: ${item.Rating || "N/A"} </strong>
             </div>
         </div>
     `;

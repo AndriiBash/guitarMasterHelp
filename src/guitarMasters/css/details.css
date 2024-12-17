@@ -54,7 +54,7 @@ body {
 .home-button {
   display: block;
   width: fit-content;
-  margin: 30px auto 0;
+  margin-bottom: 15px;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -64,22 +64,20 @@ body {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  position: relative;
+  transition: top 0.3s ease, left 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Плавное изменение этих свойств */
+}
+
+.home-button.sticky {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  animation: 0.3s ease-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .home-button:hover {
   background: #006699;
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
