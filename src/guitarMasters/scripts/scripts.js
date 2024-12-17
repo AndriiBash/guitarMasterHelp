@@ -27,20 +27,17 @@ function displayCards(data) {
     card.className = "card";
     card.setAttribute("data-index", index);
 
-card.innerHTML = `
-      <img src="https://via.placeholder.com/250x150" alt="${item.FIO}">
-      <div class="card-body">
-          <div class="card-title">${item.FIO}</div>
-          <div class="card-description">
-              <strong>Регіон:</strong> ${item.Region || "N/A"}<br>
-              <strong>Послуги:</strong> ${item.Services || "N/A"}
-          </div>
-          <div class="card-footer">
-              <strong>Контакт:</strong> ${item.ContactNumber || "N/A"}<br>
-              <strong>Рейтинг:</strong> ${item.Rating || "N/A"}
-          </div>
-      </div>
-    `;
+    card.innerHTML = `
+        <img src="https://via.placeholder.com/250x150" alt="${item.nickName}">
+        <div class="card-body">
+            <div class="card-title">${item.nickName || "NoName"}</div>
+            <div class="card-description">
+                <strong>ПІБ:</strong> ${item.FIO || "N/A"}<br>
+                <strong>Регіон:</strong> ${item.Region || "N/A"}<br>
+                <strong>Рейтинг:</strong> ${item.Rating || "N/A"}
+            </div>
+        </div>
+      `;
 
     card.addEventListener("click", () => {
       const queryString = new URLSearchParams(item).toString();
