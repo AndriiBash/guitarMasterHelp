@@ -1,9 +1,9 @@
-// Получаем параметры из URL
+// Get data from URL
 const params = new URLSearchParams(window.location.search);
 
-// Заполняем данные на странице
+// Insert data in site
 document.getElementById("details-title").textContent =
-  params.get("FIO") || "Master Details";
+  params.get("nickName");
 document.getElementById("details-fio").textContent =
   params.get("FIO") || "N/A";
 document.getElementById("details-region").textContent =
@@ -15,7 +15,6 @@ document.getElementById("details-contact").textContent =
 document.getElementById("details-rating").textContent =
   params.get("Rating") || "N/A";
 
-// Пример динамической загрузки изображения
 const imageUrl =
-  params.get("Image") || "https://via.placeholder.com/600x300";
+  params.get("mainPhotoLink") || "https://via.placeholder.com/600x300";
 document.getElementById("master-image").src = imageUrl;

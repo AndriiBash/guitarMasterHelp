@@ -21,11 +21,13 @@ function displayCards(data) {
   data.forEach((item, index) => {
     if (!item || !item.FIO) return; // Skip null or invalid entries
 
+    const imageUrl = item.mainPhotoLink || 'https://via.placeholder.com/250x150';
+
     const card = document.createElement("div");
     card.className = "card";
     card.setAttribute("data-index", index);
 
-    card.innerHTML = `
+card.innerHTML = `
       <img src="https://via.placeholder.com/250x150" alt="${item.FIO}">
       <div class="card-body">
           <div class="card-title">${item.FIO}</div>
@@ -51,7 +53,7 @@ function displayCards(data) {
 
 function handleScroll() {
   const header = document.querySelector(".sticky-header");
-  if (window.scrollY > 16) {    // maybe need fixed
+  if (window.scrollY > 18) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");

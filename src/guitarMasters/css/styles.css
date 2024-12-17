@@ -1,10 +1,10 @@
 /* Global styles */
-body{
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #000000;
-  color: #ffffff; /* Устанавливаем белый цвет текста для всего документа */
+  color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -61,10 +61,11 @@ h1 {
   margin-top: 10px;
 }
 
+
 /* Footer styles */
 .social-footer {
   background-color: #161617; 
-  color: #ffffff; /* Белый текст в футере */
+  color: #ffffff;
   padding: 20px;
   text-align: center;
 }
@@ -78,13 +79,13 @@ h1 {
   display: inline-flex;
   align-items: center;
   margin: 10px;
-  padding: 12px 20px;
+  padding: 8px 14px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
   color: #fff;
-  background-color: #2575fc; /* Статичный цвет кнопки */
+  background-color: #2575fc;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   overflow: hidden;
@@ -94,7 +95,7 @@ h1 {
 .developers a:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
-  background-color: #1a5fb4; /* Цвет при наведении */
+  background-color: #1a5fb4;
 }
 
 .developers a img {
@@ -151,6 +152,22 @@ h1 {
   font-weight: bold;
   line-height: 1.3;
   text-align: justify;
+}
+
+.social-media-description {
+  color: #6e6e73;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.line-separator {
+  width: 100%;
+  height: 1px;
+  background-color: #535355;
+  margin: 20px 0;
 }
 
 .sticky-header {
