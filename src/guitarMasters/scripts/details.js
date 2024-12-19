@@ -20,16 +20,18 @@ const imageUrl =
 document.getElementById('master-image').src = imageUrl;
 
 const homeButton = document.querySelector('.home-button');
-
+const buttonWrapper = document.querySelector('.home-button-wrapper');
 const buttonHeight = homeButton.offsetHeight;
 
 function handleScroll() {
   const scrollY = window.scrollY;
 
   if (scrollY >= buttonHeight) {
-    homeButton.style.transform = 'translateX(-200px)';
+    homeButton.style.transform = 'translateX(-100%)';
+    buttonWrapper.classList.add('active');
   } else {
     homeButton.style.transform = 'translateX(0)';
+    buttonWrapper.classList.remove('active');
   }
 }
 
