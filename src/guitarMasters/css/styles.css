@@ -199,4 +199,14 @@ h1 {
     padding: 12px;
     font-size: 16px;
   }
+
+  .card:hover {
+    transform: none; 
+  }
+
+  .developers a:hover {
+    transform: none;
+    box-shadow: none;
+    background-color: #2575fc;
+  }
 }
