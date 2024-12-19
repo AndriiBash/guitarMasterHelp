@@ -64,20 +64,9 @@ body {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  transition: top 0.3s ease, left 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Плавное изменение этих свойств */
-}
-
-.home-button.sticky {
-  position: fixed;
-  top: 10px;
-  left: 20px;
-  animation: 0.3s ease-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.home-button:hover {
-  background: #006699;
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 20px;
+  left: 0;
+  z-index: 10;
+  transition: transform 0.3s ease;
 }
