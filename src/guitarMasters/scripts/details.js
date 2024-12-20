@@ -17,11 +17,28 @@ function handleScroll() {
   const scrollY = window.scrollY;
   const isSmallScreen = window.innerWidth <= 767;
 
-  if (scrollY >= buttonHeight && !isSmallScreen) {
-    homeButton.style.transform = 'translateX(-50px)';
+  if (scrollY >= buttonHeight) {
+
+    if (!isSmallScreen)
+    {
+      homeButton.textContent = 'Повернутись';
+      homeButton.style.transform = 'translateX(-50px)';
+    }
+    else
+    {
+      homeButton.textContent = '<';
+    }
     buttonWrapper.classList.add('active');
-  } else {
-    homeButton.style.transform = 'translateX(0)';
+  }
+  else {
+    if (!isSmallScreen) {
+      homeButton.textContent = 'Повернутись';
+      homeButton.style.transform = 'translateX(0)';
+    }
+    else
+    {
+      homeButton.textContent = 'Повернутись';
+    }
     buttonWrapper.classList.remove('active');
   }
 }
@@ -37,9 +54,4 @@ const homeButton = document.querySelector('.home-button');
 const buttonWrapper = document.querySelector('.home-button-wrapper');
 const buttonHeight = homeButton.offsetHeight;
 
-window.addEventListener('resize', () => {
-  if (window.innerWidth <= 767) {
-    homeButton.style.transform = 'translateX(0)';
-    buttonWrapper.classList.add('active');
-  }
-});
+window.addEventListener('scroll', handleScroll);
