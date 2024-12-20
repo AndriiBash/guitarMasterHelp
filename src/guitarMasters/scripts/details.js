@@ -1,15 +1,29 @@
 function populateDetails(params) {
-  document.getElementById('details-title').textContent = params.get('nickName');
-  document.getElementById('details-fio').textContent =
-    params.get('FIO') || 'N/A';
-  document.getElementById('details-region').textContent =
-    params.get('Region') || 'N/A';
-  document.getElementById('details-services').textContent =
-    params.get('Services') || 'N/A';
-  document.getElementById('details-contact').textContent =
-    params.get('ContactNumber') || 'N/A';
-  document.getElementById('details-rating').textContent =
-    params.get('Rating') || 'N/A';
+  const detailsMap = {
+    'details-title': 'nickName',
+    'details-fio': 'FIO',
+    'details-region': 'Region',
+    'details-services': 'Services',
+    'details-contact': 'ContactNumber',
+    'details-rating': 'Rating',
+  };
+
+  for (const [elementId, paramName] of Object.entries(detailsMap)) {
+    document.getElementById(elementId).textContent = params.get(paramName) || 'N/A';
+  }
+}
+
+function handleScroll() {
+  const scrollY = window.scrollY;
+  const isSmallScreen = window.innerWidth <= 767;
+
+  if (scrollY >= buttonHeight && !isSmallScreen) {
+    homeButton.style.transform = 'translateX(-50px)';
+    buttonWrapper.classList.add('active');
+  } else {
+    homeButton.style.transform = 'translateX(0)';
+    buttonWrapper.classList.remove('active');
+  }
 }
 
 const params = new URLSearchParams(window.location.search);
@@ -23,16 +37,9 @@ const homeButton = document.querySelector('.home-button');
 const buttonWrapper = document.querySelector('.home-button-wrapper');
 const buttonHeight = homeButton.offsetHeight;
 
-function handleScroll() {
-  const scrollY = window.scrollY;
-
-  if (scrollY >= buttonHeight) {
-    homeButton.style.transform = 'translateX(-100%)';
-    buttonWrapper.classList.add('active');
-  } else {
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 767) {
     homeButton.style.transform = 'translateX(0)';
-    buttonWrapper.classList.remove('active');
+    buttonWrapper.classList.add('active');
   }
-}
-
-window.addEventListener('scroll', handleScroll);
+});
