@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000;
+  color: #ffffff;
 }
 
 .details-container {
@@ -13,7 +14,6 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   animation: fadeInCard 0.4s ease-out;
-  color: #ffffff;
 }
 
 @keyframes fadeInCard {
@@ -51,37 +51,27 @@ body {
 }
 
 .home-button-wrapper {
-  position: sticky;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  z-index: 0;
+  position: relative;
   margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
-.home-button-wrapper::before {
-  content: '';
+.home-button-wrapper.fixed {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 40px 0;
   background-color: rgba(68, 68, 68, 0.6);
   backdrop-filter: blur(10px);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  z-index: 1000;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.home-button-wrapper.active::before {
-  opacity: 1;
-}
-
 .home-button {
-  display: block;
-  width: fit-content;
+  display: inline-block;
   padding: 10px 20px;
+  margin-left: 10px;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
@@ -90,32 +80,21 @@ body {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .home-button:hover {
-  background-color: #3399ff; 
+  background-color: #3399ff;
 }
 
 @media (max-width: 767px) {
-  .home-button-wrapper {
-    top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .home-button-wrapper::before {
-    padding: 25px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  .home-button-wrapper.fixed {
+    top: 0;
+    padding: 8px 0;
   }
 
   .home-button {
     padding: 8px 16px;
     font-size: 14px;
-  }
-
-  .home-button:hover {
-    background-color: #0088cc; 
   }
 }
