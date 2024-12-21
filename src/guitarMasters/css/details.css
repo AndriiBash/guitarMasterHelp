@@ -71,7 +71,6 @@ body {
 .home-button {
   display: inline-block;
   padding: 10px 20px;
-  margin-left: 10px;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
@@ -80,7 +79,11 @@ body {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, margin-top 0.3s ease;
+}
+
+.home-button-wrapper.fixed .home-button {
+  margin-left: 10px;
 }
 
 .home-button:hover {
@@ -98,3 +101,4 @@ body {
     font-size: 14px;
   }
 }
+
