@@ -1,36 +1,41 @@
 function populateDetails(params) {
-  document.getElementById('details-title').textContent = params.get('nickName');
-  document.getElementById('details-fio').textContent =
-    params.get('FIO') || 'N/A';
-  document.getElementById('details-region').textContent =
-    params.get('Region') || 'N/A';
-  document.getElementById('details-services').textContent =
-    params.get('Services') || 'N/A';
-  document.getElementById('details-contact').textContent =
-    params.get('ContactNumber') || 'N/A';
-  document.getElementById('details-rating').textContent =
-    params.get('Rating') || 'N/A';
+  const detailsMap = {
+    'details-title': 'nickName',
+    'details-fio': 'FIO',
+    'details-region': 'Region',
+    'details-services': 'Services',
+    'details-contact': 'ContactNumber',
+    'details-rating': 'Rating',
+  };
+
+  for (const [elementId, paramName] of Object.entries(detailsMap)) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.textContent = params.get(paramName) || 'N/A';
+    }
+  }
+}
+
+function handleScroll() {
+  const scrollY = window.scrollY;
+  const isSmallScreen = window.innerWidth <= 767;
+
+  if (scrollY > 0) {
+    buttonWrapper.classList.add('fixed');
+    homeButton.textContent = isSmallScreen ? '<' : 'Повернутись';
+  } else {
+    buttonWrapper.classList.remove('fixed');
+    homeButton.textContent = 'Повернутись';
+  }
 }
 
 const params = new URLSearchParams(window.location.search);
 populateDetails(params);
 
-const imageUrl =
-  params.get('mainPhotoLink') || 'https://via.placeholder.com/600x300';
+const imageUrl = params.get('mainPhotoLink') || 'https://via.placeholder.com/600x300';
 document.getElementById('master-image').src = imageUrl;
 
 const homeButton = document.querySelector('.home-button');
-
-const buttonHeight = homeButton.offsetHeight;
-
-function handleScroll() {
-  const scrollY = window.scrollY;
-
-  if (scrollY >= buttonHeight) {
-    homeButton.style.transform = 'translateX(-200px)';
-  } else {
-    homeButton.style.transform = 'translateX(0)';
-  }
-}
+const buttonWrapper = document.querySelector('.home-button-wrapper');
 
 window.addEventListener('scroll', handleScroll);
