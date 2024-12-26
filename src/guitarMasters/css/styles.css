@@ -25,11 +25,9 @@ h1 {
   position: relative;
   background-color: #1d1d1f;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s;
   cursor: pointer;
-  animation: fadeIn 0.35s ease-in-out;
   min-height: 265px; 
 }
 
@@ -51,15 +49,14 @@ h1 {
   position: absolute;
   width: 100%;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.735);
-  border-radius
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.435);
+  backdrop-filter: blur(6px);
   color: #ffffff;
   padding: 15px;
   z-index: 1;
   box-sizing: border-box;
   text-align: left;
-  border-top: 1px solid rgba(0, 0, 0, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card-title {
@@ -137,6 +134,10 @@ h1 {
 }
 
 /* Animation styles */
+.fade-page {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -148,9 +149,6 @@ h1 {
   }
 }
 
-.fade-page {
-  animation: fadeIn 0.25s ease-in-out;
-}
 
 .social-text {
   color: #6e6e73;
@@ -182,7 +180,7 @@ h1 {
   position: sticky;
   top: 0;
   background-color: rgba(68, 68, 68, 0.6);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   color: #ffffff;
   text-align: center;
   padding: 20px;

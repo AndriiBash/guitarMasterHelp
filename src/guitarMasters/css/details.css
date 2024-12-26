@@ -53,7 +53,6 @@ body {
 .home-button-wrapper {
   position: relative;
   margin-bottom: 20px;
-  transition: all 0.3s ease;
 }
 
 .home-button-wrapper.fixed {
@@ -62,10 +61,11 @@ body {
   left: 0;
   width: 100%;
   background-color: rgba(68, 68, 68, 0.6);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   z-index: 1000;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.5s ease; /* used animation when to start fixed wapper zone */
 }
 
 .home-button {
@@ -79,7 +79,7 @@ body {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease, margin-top 0.3s ease;
+  transition: all 0.5s ease; /* maybe use keyFrames for nornal animation*/
 }
 
 .home-button-wrapper.fixed .home-button {
