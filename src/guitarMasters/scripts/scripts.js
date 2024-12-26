@@ -40,7 +40,6 @@ function displayCards(data) {
     `;
 
     card.addEventListener("click", () => {
-      //console.log(item);
       const queryString = new URLSearchParams(item).toString();
       window.location.href = `details.html?${queryString}`;
     });
