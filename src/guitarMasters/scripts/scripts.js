@@ -39,13 +39,23 @@ function displayCards(data) {
         </div>
     `;
 
-    card.addEventListener("click", () => {
-      //console.log(item);
-      const queryString = new URLSearchParams(item).toString();
-      window.location.href = `details.html?${queryString}`;
-    });
+card.addEventListener("click", () => {
+  // Преобразуем объект links в строку
+  const itemWithEncodedLinks = {
+    ...item,
+      links: JSON.stringify(item.links || {}) // Преобразуем объект links в строку JSON
+    };
 
-    container.appendChild(card);
+    // Формируем строку параметров для URL
+    const queryString = new URLSearchParams(itemWithEncodedLinks).toString();
+
+    console.log(queryString); // Проверяем, что запрос сформирован правильно
+
+    // Перенаправляем на details.html с параметрами
+    window.location.href = `details.html?${queryString}`;
+  });
+
+  container.appendChild(card);
   });
 }
 

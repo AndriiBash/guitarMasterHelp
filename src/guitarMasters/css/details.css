@@ -2,10 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('../img/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -93,6 +90,62 @@ body {
   background-color: #3399ff;
 }
 
+.social-btn {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.social-btn.instagram {
+  background-color: #E4405F;
+}
+
+.social-btn.instagram:hover {
+  background-color: #C13584;
+}
+
+.social-btn.telegram {
+  background-color: #0088CC;
+}
+
+.social-btn.telegram:hover {
+  background-color: #006ba6; /* Заменен цвет для hover */
+}
+
+.social-btn.facebook {
+  background-color: #3b5998;
+}
+
+.social-btn.facebook:hover {
+  background-color: #365492;
+}
+
+.social-btn.default {
+  background-color: #007BFF;
+}
+
+.social-btn.default:hover {
+  background-color: #0056b3;
+}
+
+
+
+
 @media (max-width: 767px) {
   .home-button-wrapper.fixed {
     top: 0;
@@ -102,69 +155,7 @@ body {
   .home-button {
     padding: 8px 16px;
     font-size: 14px;
+    transition: none; 
   }
 }
-.social-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
-}
 
-.social-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 50px;
-  background-color: #1d1d1f;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  gap: 10px;
-}
-
-.social-button img {
-  width: 20px;
-  height: 20px;
-}
-
-.social-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.social-button.facebook {
-  background-color: #4267b2;
-}
-
-.social-button.instagram {
-  background-color: #e1306c;
-}
-
-.social-button.x {
-  background-color: #000000;
-}
-
-.social-button.telegram {
-  background-color: #0079b6;
-}
-
-.social-button.facebook:hover {
-  background-color: #365899;
-}
-
-.social-button.instagram:hover {
-  background-color: #bc2a8d;
-}
-
-.social-button.x:hover {
-  background-color: #222222;
-}
-
-.social-button.telegram:hover {
-  background-color: #0078a3;
-}
