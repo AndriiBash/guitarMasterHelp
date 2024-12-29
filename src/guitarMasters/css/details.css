@@ -79,11 +79,11 @@ body {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease; /* maybe use keyFrames for nornal animation*/
 }
 
 .home-button-wrapper.fixed .home-button {
   margin-left: 10px;
+  transition: transform 0.3s ease;
 }
 
 .home-button:hover {
@@ -100,7 +100,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.3s ease;
 }
 
@@ -124,7 +124,7 @@ body {
 }
 
 .social-btn.telegram:hover {
-  background-color: #006ba6; /* Заменен цвет для hover */
+  background-color: #006ba6;
 }
 
 .social-btn.facebook {
@@ -144,8 +144,6 @@ body {
 }
 
 
-
-
 @media (max-width: 767px) {
   .home-button-wrapper.fixed {
     top: 0;
@@ -156,6 +154,11 @@ body {
     padding: 8px 16px;
     font-size: 14px;
     transition: none; 
+  }
+
+  .home-button-wrapper.fixed .home-button {
+    margin-left: 18px;
+    transition: none;
   }
 }
 
