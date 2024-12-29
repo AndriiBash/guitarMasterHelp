@@ -28,7 +28,7 @@ h1 {
   overflow: hidden;
   transition: transform 0.2s;
   cursor: pointer;
-  min-height: 265px; 
+  min-height: 265px;
 }
 
 .card:hover {
@@ -70,10 +70,9 @@ h1 {
   color: #86868b;
 }
 
-
 /* Footer styles */
 .social-footer {
-  background-color: #161617; 
+  background-color: #161617;
   color: #ffffff;
   padding: 20px;
   text-align: center;
@@ -113,23 +112,23 @@ h1 {
   margin-right: 10px;
 }
 
-.developers a[href*="t.me"] {
-  background-color: #0088cc;
+.developers a[href*='t.me'] {
+  background-color: #0079b6;
 }
 
-.developers a[href*="t.me"]:hover {
+.developers a[href*='t.me']:hover {
   background-color: #006699;
 }
 
-.developers a[href*="github.com"] {
+.developers a[href*='github.com'] {
   background-color: #1e1e1e;
 }
 
-.developers a[href*="github.com"]:hover {
+.developers a[href*='github.com']:hover {
   background-color: #333333;
 }
 
-.developers a[href*="github.com"] img {
+.developers a[href*='github.com'] img {
   filter: invert(1);
 }
 
@@ -148,7 +147,6 @@ h1 {
     transform: translateY(0);
   }
 }
-
 
 .social-text {
   color: #6e6e73;
@@ -198,7 +196,7 @@ h1 {
   }
 
   .card:hover {
-    transform: none; 
+    transform: none;
   }
 
   .developers a:hover {
